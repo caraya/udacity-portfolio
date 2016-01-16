@@ -1,0 +1,27 @@
+{
+  "name": "athena-fonts",
+  "version": "0.1.0",
+  "authors": [
+    "Carlos Araya <carlos.araya@gmail.com>"
+  ],
+  "description": "loads fonts for athena project.",
+  "keywords": [
+    "web-component",
+    "polymer",
+    "seed"
+  ],
+  "main": "athena-fonts.html",
+  "license": "http://polymer.github.io/LICENSE.txt",
+  "homepage": "https://github.com/caraya/athena-fonts/",
+  "ignore": [
+    "/.*",
+    "/test/"
+  ],
+  "dependencies": {
+    "polymer": "Polymer/polymer#^1.1.0"
+  },
+  "devDependencies": {
+    "iron-component-page": "PolymerElements/iron-component-page#^1.0.0"
+  },
+  "private": true
+}

@@ -1,0 +1,77 @@
+<!--
+@license
+Copyright (c) 2015 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+<link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="../iron-flex-layout/iron-flex-layout.html">
+<!--
+Container for flexbox-based image gallery. Used [this codepen](http://codepen.io/caraya/full/NGoWKM/) as inspiration and the basis for this element.
+
+You should also look at the [Flexbox layout with iron-flex-layout guide](https://elements.polymer-project.org/guides/flex-layout) and the [complete guide to flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/) for reference.
+
+One last element to note. When creating the styles you will have to create one additional piercing selector to make this work. I had to style the `.gallery-content` class from the custom element with the following selector so I could apply the `iron-flex-layout` mixins from the custom element and make the gallery wrap as designed:
+
+    .gallery > ::content .gallery-content {}
+
+Example:
+
+    <athena-gallery>
+      <div class="gallery-content">
+        <div class="gallery-item">
+          <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/32795/love-the-architecture-01-1024x768.jpg" alt="Architecture in Amsterdam rocks" />
+          <h3>The architecture rocks</h3>
+
+          <p>...</p>
+        </div>
+
+        Add additional gallery items here
+
+      </div>
+    </athena-gallery>
+
+As long as you keep the `gallery-item` class you can use other elements as well. For the original use case of image galleries I could use `figure` and `figcaption`. It has a better semantic fit with the use case and it should work better with assistive technology.
+
+It is also good to point out that you don't need media queries for this element as flexbox is responsive by default.
+
+@element athena-gallery
+@demo demo/index.html
+@hero hero.svg
+-->
+<dom-module id="athena-gallery">
+
+  <template>
+    <style is="custom-style">
+      :host {
+        display: block;
+        box-sizing: border-box;
+      }
+
+      .gallery {
+        margin: .5vw;
+        padding: .5vw;
+      }
+
+      .gallery > ::content .gallery-content {
+        @apply(--layout-horizontal);
+        @apply(--layout-wrap);
+      }
+
+    </style>
+
+    <div class="gallery">
+      <content select=".gallery-content"></content>
+    </div>
+  </template>
+
+</dom-module>
+
+<script>
+
+  Polymer({ is: 'athena-gallery' });
+
+</script>
