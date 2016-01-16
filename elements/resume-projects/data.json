@@ -1,0 +1,37 @@
+[{
+	"description": "Creating a the web front end for a web application using Web Compontents and Google Paper components. Learn How to use components and how to integrate Paper’s material look ",
+	"name": "Material Component Experiment",
+	"notes": "",
+	"stage": "Early Research and code",
+	"type": "Code",
+	"image_url": "images/project001.png",
+	"url": {
+		"code": "https://github.com/caraya/polymer-playground",
+		"other": "https://caraya.github.io/polymer-list/firebase.html",
+		"writeup": ""
+	}
+}, {
+	"description": "Creating a set of D3 web components both using Polymer and standard web components. ",
+	"name": "D3 web components",
+	"notes": "Analyze advantages and disadvantages of each approach. Standard web components are only fully supported in Chrome. Polymer / X-tags is polyfills and syntactic sugar but it works with all modern browsers\n",
+	"stage": "Early Research and code",
+	"type": "Code / Writeup",
+	"image_url": "images/project002.png",
+	"url": {
+		"code": "",
+		"other": "",
+		"writeup": ""
+	}
+}, {
+	"description": "Creating a set of D3 Angular directives to test my skill and the technology. Biggest question is how do you nest directives and how do you make them work",
+	"name": "Angular directives for D3",
+	"notes": "",
+	"stage": "Early Research and code",
+	"type": "Code / Writeup",
+	"image_url": "images/project003.png",
+	"url": {
+		"code": "",
+		"other": "",
+		"writeup": ""
+	}
+}]

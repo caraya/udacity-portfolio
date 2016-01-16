@@ -1,0 +1,135 @@
+<link rel="import" href="../elements.html">
+
+<!--
+<link rel="import" href="bower_components/polymer/polymer.html">
+<link rel="import" href="bower_components/iron-flex-layout/classes/iron-flex-layout.html">
+-->
+
+<!--
+Header for resume project in udacity's nanodegree program.
+
+Example:
+
+    <resume-header
+      title="Carlos Araya"
+      subtitle="Web Ninja in Training"
+      portrait="images/portrait.png">
+    </resume-header>
+
+@group athena-resume
+@element resume-header
+@demo demo/index.html
+@hero hero.svg
+-->
+<dom-module id="resume-header">
+
+  <template>
+    <style>
+      :host {
+        display: block;
+        box-sizing: content-box;
+        margin: 0 auto;
+        width: 90vw;
+      }
+
+      header {
+        @apply(--layout-horizontal);
+        @apply(--layout-wrap);
+        border-bottom: 1px solid #bcbbbb;
+        padding: 2em;
+      }
+
+      img {
+        display: block;
+        width: 18vh;
+        height: 18vh;
+        -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        border-radius: 50%;
+      }
+
+      .full-title
+        display: block;
+      }
+
+      .full-title h1,
+      .full-title h2 {
+        font-weight: 100;
+        font-family: "Lato", sans-serif;
+      }
+
+      .full-title h1{
+        margin-top: 0;
+        font-size: 4em;
+      }
+
+      .full-title h2 {
+        font-size: 2em;
+        text-align: right;
+      }
+
+      /*
+       For the header we will only play with element placing at smaller form factors
+       */
+
+            @media only screen and
+        (min-device-width : 320px) and
+        (max-device-width : 767px) {
+
+          :host {
+            text-align: center;
+
+          }
+
+          .author: {
+            display: inline;
+          }
+
+          .full-title h1: {
+            margin-bottom: 2em;
+          }
+
+          .full-title h1,
+          .full-title h2,
+          .author {
+            margin: 0 auto;
+            text-align: center;
+
+          }
+
+      }
+
+    </style>
+    <header class="layout justified horizontal">
+      <img class="author" src="{{portrait}}" alt="{{title}}">
+      <div class="full-title">
+        <h1>{{title}}</h1>
+        <h2>{{subtitle}}</h2>
+      </div>
+    </header>
+  </template>
+
+</dom-module>
+
+<script>
+
+  Polymer({
+
+    is: 'resume-header',
+
+    properties: {
+      portrait: {
+        type: String
+      },
+
+      title: {
+        type: String
+      },
+
+      subtitle: {
+        type: String
+      }
+    }
+  });
+
+</script>

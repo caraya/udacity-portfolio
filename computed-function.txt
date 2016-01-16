@@ -1,0 +1,12 @@
+<template is="dom-bind">
+    <p>[[computeMessageValue(message, messagetype)]]</p> 
+</template>
+With the following computing function:
+
+computeMessageValue: function (message, messagetype) {
+    if (messagetype === 'chat') {
+        return message.text;
+    } else if (messagetype === 'location') {
+        return message.latitude + ' , ' + message.longitude;
+    }
+}

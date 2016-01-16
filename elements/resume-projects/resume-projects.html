@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+
+<link rel="import" href="../elements.html">
+<!--
+  <link rel="import" href="bower_components/polymer/polymer.html">
+  <link rel="import" href="bower_components/athena-fonts/athena-fonts.html">
+  <link rel="import" href="bower_components/iron-ajax/iron-ajax.html">
+  <link rel="import" href="bower_components/iron-flex-layout/classes/iron-flex-layout.html">
+  <link rel="import" href="bower_components/iron-flex-layout/iron-flex-layout.html">
+-->
+</head>
+<body>
+
+<!--
+
+  Imports a json file with project data and generates HTML with the information to produce a flex gallery layout.
+
+Example:
+
+    <resume-projects></resume-projects>
+
+@group athena-portfolio
+@element resume-projects
+@demo demo/index.html
+@hero hero.svg
+-->
+
+<dom-module id="resume-projects">
+
+  <template>
+    <style>
+      :host {
+        display: block;
+        box-sizing: border-box;
+      }
+
+      .projects {
+        @apply(--layout-horizontal);
+        @apply(--layout-wrap);
+      }
+
+      h2 {
+        margin-left: 1em;
+      }
+
+      .project {
+        margin: .5vw;
+        padding: 1vw;
+/*        border: 1px solid #444;*/
+        width: 25em;
+        height: auto;
+        margin-bottom: 2em;
+      }
+
+      .project h3 {
+        color: #747704;
+        font-family: "Lato", Arial, Helvetics, sans-serif;
+        text-align: center;
+        text-transform: uppercase;
+      }
+
+      .project img {
+        width: 100%;
+        height: 25vh;
+        margin-bottom: 1em;
+      }
+
+      .project p {
+        line-height: 1.2;
+      }
+
+      .project p,
+      .project ul li {
+        font-family: "Lato", Arial, Helvetics, sans-serif;
+        font-weight: 300;
+      }
+
+      /*
+      MEDIA QUERIES FOR PROJECTS
+
+      We're breaking the queries into two:
+
+        * Smaller devices between 320 and 767 pixels (smaller than tablet)
+        * Devices 768 pixels wide or larger
+
+      This may not be enough but it's a good starting point
+      */
+      @media only screen and
+        (min-device-width : 320px) and
+        (max-device-width : 767px) {
+
+          .projects {
+            @apply(--layout-vertical);
+            @apply(--layout-wrap);
+          }
+
+        .project {
+          margin: .5vw;
+          padding: 1vw;
+  /*        border: 1px solid #444;*/
+          width: 100%;
+          height: auto;
+          margin-bottom: 2em;
+        }
+
+        .project img {
+          width: 90%;
+          height: 50vw;
+          margin: 0 auto;
+        }
+
+      }
+
+      @media only screen and
+        (min-device-width: 768px) {
+
+          .projects {
+            @apply(--layout-horizontal);
+            @apply(--layout-wrap);
+          }
+
+        .project {
+          margin: .5vw;
+          padding: 1vw;
+  /*        border: 1px solid #444;*/
+          width: 100%;
+          height: auto;
+          margin-bottom: 2em;
+        }
+
+        .project img {
+          width: 100%;
+          height: 50vh;
+          margin: 0 auto;
+        }
+      }
+    </style>
+    <iron-ajax
+      auto
+      url="data.json"
+      handle-as="json"
+      last-response="{{data}}"></iron-ajax>
+
+      <h2>Featured Projects:</h2>
+
+      <div class="projects">
+
+      <template is="dom-repeat" items="{{data}}" as="project">
+        <div class="project">
+         <div class="pr">
+            <img src$="{{project.image_url}}" alt="{{project.name}}">
+
+            <h3>{{project.name}}</h3>
+          </div>
+<!--
+
+          <div class="pr-desc">
+            <p>{{project.description}}</p>
+          </div>
+
+          <div class="pr-links">
+            <h4>Links</h4>
+
+              <ul>
+                <li><a href="{{project.url.code}}" target="_blank">Code</a></li>
+                <li><a href="{{project.url.writeup}}" target="_blank">Narrative</a></li>
+                <li><a href="{{project.url.other}}" target="_blank">Other</a></li>
+              </ul>
+          </div>
+-->
+        </div>
+      </template>
+
+      </div>
+  </template>
+
+<script>
+
+  Polymer({
+    is: 'resume-projects',
+
+    properties: {
+      data: {
+        type: Object
+      }
+    }
+  });
+
+</script>
+</dom-module>
+</body>
+</html>

@@ -1,0 +1,30 @@
+{
+  "name": "resume-projects",
+  "version": "0.1.0",
+  "authors": [
+    "Carlos Araya <carlos.araya@gmail.com>"
+  ],
+  "description": "An element providing a solution to no problem in particular.",
+  "keywords": [
+    "web-component",
+    "polymer",
+    "seed"
+  ],
+  "main": "resume-projects.html",
+  "license": "http://caraya.mit-license.org",
+  "homepage": "",
+  "ignore": [
+    "/.*",
+    "/test/"
+  ],
+  "dependencies": {
+    "polymer": "Polymer/polymer#^1.1.0",
+    "iron-flex-layout": "PolymerElements/iron-flex-layout#~1.2.2",
+    "iron-ajax": "PolymerElements/iron-ajax#^1.1.0",
+    "athena-fonts": "~0.1.0"
+  },
+  "devDependencies": {
+    "iron-component-page": "PolymerElements/iron-component-page#^1.0.0",
+    "web-component-tester": "*"
+  }
+}

@@ -1,0 +1,25 @@
+
+body {
+/*  background-color: #bcb;*/
+  font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  color: #555;
+}
+
+figure {
+  margin: 2em;
+  max-width: content-width;
+}
+
+figure img {
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  width: 100%;
+  height: 50vh;
+}
+
+p.small {
+  font-size: 75%;
+  text-align: center;
+
+}
