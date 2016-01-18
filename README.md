@@ -1,61 +1,14 @@
-# resume-header
+# Udacity Portfolio Project
 
-An element providing a starting point for your own reusable Polymer elements.
+The project cannot be viewed as a file:// URL (can't be opened directly from the browser, it has to be viewed as a server.) THis is a limitation of Polymer and how I implemented the project viewer.
 
+To view the portfolio run a server using Python on the root of the repository like so:
 
-## Dependencies
+`python -m SimpleHTTPServer 8080`
 
-Element dependencies are managed via [Bower](http://bower.io/). You can
-install that via:
+if that doesn't work or you know you have python 3 installed the command changes to:
 
-    npm install -g bower
+`python3 -m http.server`
 
-Then, go ahead and download the element's dependencies:
+the project is live at [https://caraya.github.io/usacity-portfolio](https://caraya.github.io/usacity-portfolio). I've deleted the master branch to make sure the repo complies with Udacity's 100k files limit. 
 
-    bower install
-
-
-## Playing With Your Element
-
-If you wish to work on your element in isolation, we recommend that you use
-[Polyserve](https://github.com/PolymerLabs/polyserve) to keep your element's
-bower dependencies in line. You can install it via:
-
-    npm install -g polyserve
-
-And you can run it via:
-
-    polyserve
-
-Once running, you can preview your element at
-`http://localhost:8080/components/resume-header/`, where `resume-header` is the name of the directory containing it.
-
-
-## Testing Your Element
-
-Simply navigate to the `/test` directory of your element to run its tests. If
-you are using Polyserve: `http://localhost:8080/components/resume-header/test/`
-
-### web-component-tester
-
-The tests are compatible with [web-component-tester](https://github.com/Polymer/web-component-tester).
-Install it via:
-
-    npm install -g web-component-tester
-
-Then, you can run your tests on _all_ of your local browsers via:
-
-    wct
-
-#### WCT Tips
-
-`wct -l chrome` will only run tests in chrome.
-
-`wct -p` will keep the browsers alive after test runs (refresh to re-run).
-
-`wct test/some-file.html` will test only the files you specify.
-
-
-## Yeoman support
-
-If you'd like to use Yeoman to scaffold your element that's possible. The official [`generator-polymer`](https://github.com/yeoman/generator-polymer) generator has a [`seed`](https://github.com/yeoman/generator-polymer#seed) subgenerator.
